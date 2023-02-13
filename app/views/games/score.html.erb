@@ -1,0 +1,20 @@
+<div class="container d-flex flex-column align-items-center">
+<h1>Score</h1>
+<div>
+  <%= @answer %></div>
+</div>
+<div class = "container d-flex flex-column align-items-center">
+  <div> <%= @total_time %>
+  </div>
+  <div>
+    <%= @message[:score] %> points!
+  </div>
+  <div>
+    <%= @message[:message] %>
+  </div>
+  <div>
+  <%= link_to new_path, class: 'btn btn-primary' do %>
+    <div>New Game</div>
+  <% end %>
+  </div>
+</div>

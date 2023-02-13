@@ -1,0 +1,21 @@
+<div class = "container d-flex flex-column align-items-center">
+  <h1 class = "mb-3">New Game</h1>
+  <div class = "d-flex flex-row justify-content-center mb-3">
+    <% @letters.each do |letter| %>
+      <div class = "letter-box"> <%= letter %> </div>
+    <% end %>
+  </div>
+  <div class = 'd-flex flex-column w-100 align-items-center'>
+    <form action="/score" method="get" class="form-inline w-100 d-flex flex-column align-items-center">
+      <label for="hmtl">What's the longest word you can make?</label>
+      <div class = "w-50 d-flex">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="hidden" name="time" value = "<%=@start_time%>">
+        <input type="hidden" name="letters" value = "<%= @letters%>">
+        <input class = "flex-grow-1" type="text" name="answer">
+        <input type="submit" value="play">
+      </div>
+    </form>
+  </div>
+  <div><%= @start_time %></div>
+</div>
